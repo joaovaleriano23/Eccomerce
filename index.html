@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>TechStore </title>
+</head>
+
+<body> 
+    <!-- CABEÇAHLO -->
+    <header>
+
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i>
+            <h1>TechStore</h1>
+        </div>
+
+        <div class="search-container">
+            <input class="search-input" type="text" placeholder="Buscar produtos...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+    </header>
+
+       <!-- MENU SUPERIOR -->
+    <div class="categories-container">
+        <nav class="category-bar">
+
+            <button class="categoory-btn active" data-category="all" type="button">
+                <i class="fa-solid fa-border-all" aria-hidden="true"></i> Todos
+            </button>
+
+            <button class="categoory-btn" data-category="smartphones" type="button">
+                <i class="fa-solid fa-mobile-screen"></i> Smartphones
+            </button>
+
+            <button class="categoory-btn" data-category="notebooks" type="button">
+                <i class="fa-solid fa-laptop"></i> Notebooks
+            </button>
+
+            <button class="categoory-btn" data-category="fones" type="button">
+                <i class="fa-solid fa-headphones"></i> Fones
+            </button>
+
+            <button class="categoory-btn" data-category="acessorios" type="button">
+                <i class="fa-regular fa-keyboard"></i> Acessórios
+            </button>
+
+            <button class="categoory-btn"  data-category="smartWatches" type="button">
+                <i class="fa-solid fa-clock"></i> SmartWatches
+            </button>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <h2>Black Friday Antecipada!</h2>
+        <p>Descontos imperdíveis em toda a loja com até 50% de Descontos. Aproveite!</p>
+    </section>
+
+    <!-- ITENS -->
+    <main class="products">
+        <div class="products-container">
+            <!-- Onde vamos coloar os Produtos -->
+
+            <!-- <div class="product-card">
+                <img class="products" src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400" alt="Iphone 15 pro Max" >
+                <div class="products-info">
+                    <h3 class="product-name">Iphone 15 Pro Max</h3>
+                    <p class="product-description">Smartphone Apple com câmara avançada</p>
+                    <p class="product-price">R$ 7.999,00 </p>
+                    <button class="product-button"> Ver detalhes</button>
+                </div>
+            </div> -->
+
+        </div>
+ 
+    </main>
+ 
+    <!-- RODAPÉ -->
+     <footer>
+        <div class="footer-container">
+            <p>© 2025 TechStore. Todos os direitos reservados.</p>
+        </div>
+        
+     </footer>
+</body>
+<script src="./script.js"></script>
+</html>
