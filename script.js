@@ -1,5 +1,5 @@
 let textoPesquisa = ""
-
+let categoriaAtual = "all"; //todos
 let produtos = [
   {
     id: 1,
@@ -97,17 +97,20 @@ let input = document.querySelector(".search-input");
 
 let todosBotoes = document.querySelectorAll(".categoory-btn")
 
+
 function mostrarProdutos() {
   let htmlProdutos = "";
 
   let produtosFiltrados  = produtos.filter ( prd => {
     
-    let passouPesquisa = prd.nome.toLowerCase().includes(textoPesquisa.toLowerCase());
+    let passouCategoria = (categoriaAtual === "all" || prd.categoria === categoriaAtual);
     
-    return passouPesquisa;
+    let passouPesquisa = prd.nome.toLowerCase().includes(textoPesquisa. toLowerCase());
+    
+    return passouPesquisa && passouCategoria;
   })
 
-  console.log(produtosFiltrados);
+    //console.log(produtosFiltrados);
 
   produtosFiltrados.forEach(prd => {
   
@@ -142,19 +145,35 @@ function pesquisar(){
   mostrarProdutos()
 };
 
-function trocarCategoria() {
-  console.log("botao.value:")
+function trocarCategoria(categoria) {
+  //console.log(categoria);
+  categoriaAtual = categoria;
+
+  todosBotoes.forEach(botao => {
+    botao.classList.remove("active");
+
+    if (botao.getAttribute("data-category") === categoria) {
+      botao.classList.add("active");
+    }
+  });
+
+
+  mostrarProdutos();
 }
 
 window.addEventListener("DOMContentLoaded", () => {  
-    mostrarProdutos();
-    input.addEventListener("input", pesquisar);
+  mostrarProdutos();
 
-    todosBotoes.forEach(botao => {botao.addEventListener("click", trocarCategoria)
+  input.addEventListener("input", pesquisar);
+
+  todosBotoes.forEach(botao => {
+      
+    botao.addEventListener("click", () => {
+        let categoria = botao.getAttribute("data-category")
+
+        trocarCategoria(categoria)
     })
+        
+  })
 
-})
-//window.onload = mostrarProdutos;
-
-//input.addEventListener("input", pesquisar);
-
+});
